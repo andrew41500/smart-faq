@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Smart Multi-Agent FAQ & Knowledge Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Smart Multi-Agent FAQ & Knowledge Assistant</h1>
+        <p>Ask anything about the fictional product <strong>SmartSupport Cloud</strong>.</p>
+      </header>
+
+      <main>
+        <section id="chat-window"></section>
+
+        <form id="chat-form">
+          <div class="input-row">
+            <input
+              id="user-input"
+              type="text"
+              placeholder="Ask a question about SmartSupport Cloud..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </div>
+          <label class="option-row">
+            <input id="summarize-toggle" type="checkbox" />
+            Summarize long answers
+          </label>
+        </form>
+
+        <section class="sample-queries">
+          <h2>Try these sample questions</h2>
+          <ul>
+            <li class="sample-query">
+              What is SmartSupport Cloud and who is it for?
+            </li>
+            <li class="sample-query">
+              How is my data stored and secured?
+            </li>
+            <li class="sample-query">
+              Does SmartSupport Cloud support multi-agent workflows?
+            </li>
+            <li class="sample-query">
+              Explain the onboarding steps from the manual.
+            </li>
+            <li class="sample-query">
+              What is your refund policy for on-premise appliances?
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Powered by Flask, LangGraph, LangChain, ChromaDB, and a single LLM used across multiple agents.
+        </p>
+      </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
+
+

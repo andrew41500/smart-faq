@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: smart-faq-app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - CHROMA_DIR=/data/chroma_db
+      - SAMPLE_DOCS_DIR=/app/sample_docs
+      # Set one of these locally before running:
+      # - GOOGLE_API_KEY=your-key
+      # or:
+      # - HUGGINGFACE_API_TOKEN=your-token
+      - LLM_PROVIDER=google
+    volumes:
+      - chroma_data:/data/chroma_db
+    restart: unless-stopped
+
+volumes:
+  chroma_data:
+
+
